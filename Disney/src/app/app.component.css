@@ -1,0 +1,22 @@
+/* Effetto ingrandimento al passaggio del mouse */
+.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 183, 255, 0.3) !important;
+  background-color: #2d3748 !important;
+}
+
+/* Navbar personalizzata */
+.navbar {
+  border-bottom: 2px solid #0dcaf0;
+}
+
+.btn-group .btn {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

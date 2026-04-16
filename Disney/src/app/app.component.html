@@ -1,0 +1,56 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="min-vh-100" style="background-color: #0f172a;">
+  
+  <nav class="navbar navbar-dark bg-dark shadow-sm mb-4">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-info" href="#">
+        🏰 DISNEY+ DATABASE EXPLORER
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    
+    <div class="text-center mb-5 text-white">
+      <h1 class="display-4 fw-bold">Esplora il Catalogo</h1>
+    
+      
+      <div class="btn-group shadow" role="group">
+        <button (click)="caricaDati('all')" class="btn btn-outline-info px-4">Tutto</button>
+        <button (click)="caricaDati('movies')" class="btn btn-outline-info px-4">Film</button>
+        <button (click)="caricaDati('tv_shows')" class="btn btn-outline-info px-4">Serie TV</button>
+        <button (click)="caricaDati('recent')" class="btn btn-outline-warning px-4">Novità 2021</button>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 pb-5">
+      <div class="col" *ngFor="let u of unita">
+        <div class="card h-100 border-0 shadow-lg movie-card bg-secondary text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge" [ngClass]="u.tipo === 'Movie' ? 'bg-success' : 'bg-primary'">
+                {{ u.tipo }}
+              </span>
+              <small class="text-warning fw-bold">{{ u.anno_uscita }}</small>
+            </div>
+            
+            <h5 class="card-title fw-bold">{{ u.titolo }}</h5>
+            <p class="card-text small text-light mb-1"><strong>Regia:</strong> {{ u.regista }}</p>
+            <p class="card-text small text-light mb-1"><strong>Genere:</strong> {{ u.genere }}</p>
+            <p class="card-text mb-0 mt-3">
+              <span class="badge border border-light text-light">{{ u.classificazione }}</span>
+              <span class="ms-2 small text-info">{{ u.durata }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="unita.length === 0" class="text-center text-white py-5">
+      <div class="spinner-border text-info" role="status"></div>
+      <p class="mt-2">Caricamento dati dal database...</p>
+    </div>
+
+  </div>
+</div>
