@@ -1,12 +1,12 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http'; // <--- AGGIUNGI QUESTO
+import { ApplicationConfig } from '@angular/core'; // Importa il tipo per configurare l'app Angular standalone
+import { provideRouter } from '@angular/router'; // Funzione per configurare il routing
+import { provideHttpClient } from '@angular/common/http'; // Fornisce il servizio HttpClient a tutta l'app
 
-import { routes } from './app.routes';
+import { routes } from './app.routes'; // Importa le rotte definite nell'app
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    provideHttpClient() // <--- AGGIUNGI QUESTO
+    provideRouter(routes), // Attiva il sistema di routing usando le rotte definite
+    provideHttpClient() // Abilita HttpClient per fare richieste HTTP (API, backend, ecc.)
   ]
 };

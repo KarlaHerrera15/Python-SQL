@@ -1,22 +1,22 @@
 /* Effetto ingrandimento al passaggio del mouse */
 .movie-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animazione fluida per trasformazione e ombra */
+  cursor: pointer; /* Cambia il cursore in mano per indicare elemento cliccabile */
 }
 
 .movie-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 183, 255, 0.3) !important;
-  background-color: #2d3748 !important;
+  transform: translateY(-10px); /* Sposta la card verso l'alto di 10px */
+  box-shadow: 0 15px 30px rgba(0, 183, 255, 0.3) !important; /* Aggiunge un'ombra più intensa */
+  background-color: #2d3748 !important; /* Cambia colore di sfondo al passaggio del mouse */
 }
 
 /* Navbar personalizzata */
 .navbar {
-  border-bottom: 2px solid #0dcaf0;
+  border-bottom: 2px solid #0dcaf0; /* Aggiunge una linea inferiore azzurra */
 }
 
 .btn-group .btn {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 600; /* Rende il testo semi-grassetto */
+  text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+  letter-spacing: 1px; /* Aumenta lo spazio tra le lettere */
 }

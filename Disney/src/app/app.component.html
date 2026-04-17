@@ -1,56 +1,54 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<div class="min-vh-100" style="background-color: #0f172a;">
+<div class="min-vh-100" style="background-color: #0f172a;"> <!-- Contenitore principale a tutta altezza con sfondo scuro -->
   
-  <nav class="navbar navbar-dark bg-dark shadow-sm mb-4">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-info" href="#">
-        🏰 DISNEY+ DATABASE EXPLORER
+  <nav class="navbar navbar-dark bg-dark shadow-sm mb-4"> <!-- Navbar scura con ombra e margine inferiore -->
+    <div class="container"> <!-- Contenitore Bootstrap centrato -->
+      <a class="navbar-brand fw-bold text-info" href="#"> <!-- Logo/titolo della navbar -->
+        🏰 DISNEY+ DATABASE EXPLORER <!-- Testo del brand -->
       </a>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container"> <!-- Contenitore principale del contenuto -->
     
-    <div class="text-center mb-5 text-white">
-      <h1 class="display-4 fw-bold">Esplora il Catalogo</h1>
+    <div class="text-center mb-5 text-white"> <!-- Sezione titolo centrata -->
+      <h1 class="display-4 fw-bold">Esplora il Catalogo</h1> <!-- Titolo principale -->
     
       
-      <div class="btn-group shadow" role="group">
-        <button (click)="caricaDati('all')" class="btn btn-outline-info px-4">Tutto</button>
-        <button (click)="caricaDati('movies')" class="btn btn-outline-info px-4">Film</button>
-        <button (click)="caricaDati('tv_shows')" class="btn btn-outline-info px-4">Serie TV</button>
-        <button (click)="caricaDati('recent')" class="btn btn-outline-warning px-4">Novità 2021</button>
+      <div class="btn-group shadow" role="group"> <!-- Gruppo di bottoni con ombra -->
+        <button (click)="caricaDati('all')" class="btn btn-outline-info px-4">Tutto</button> <!-- Bottone per caricare tutto -->
+        <button (click)="caricaDati('movies')" class="btn btn-outline-info px-4">Film</button> <!-- Bottone per i film -->
+        <button (click)="caricaDati('tv_shows')" class="btn btn-outline-info px-4">Serie TV</button> <!-- Bottone per serie TV -->
+        <button (click)="caricaDati('recent')" class="btn btn-outline-warning px-4">Novità 2021</button> <!-- Bottone per contenuti recenti -->
       </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 pb-5">
-      <div class="col" *ngFor="let u of unita">
-        <div class="card h-100 border-0 shadow-lg movie-card bg-secondary text-white">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-start mb-2">
-              <span class="badge" [ngClass]="u.tipo === 'Movie' ? 'bg-success' : 'bg-primary'">
-                {{ u.tipo }}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 pb-5"> <!-- Griglia responsive -->
+      <div class="col" *ngFor="let u of unita"> <!-- Loop Angular su ogni elemento -->
+        <div class="card h-100 border-0 shadow-lg movie-card bg-secondary text-white"> <!-- Card per ogni contenuto -->
+          <div class="card-body"> <!-- Corpo della card -->
+            <div class="d-flex justify-content-between align-items-start mb-2"> <!-- Header della card -->
+              <span class="badge" [ngClass]="u.tipo === 'Movie' ? 'bg-success' : 'bg-primary'"> <!-- Badge tipo contenuto -->
+                {{ u.tipo }} <!-- Mostra tipo (Movie o TV Show) -->
               </span>
-              <small class="text-warning fw-bold">{{ u.anno_uscita }}</small>
+              <small class="text-warning fw-bold">{{ u.anno_uscita }}</small> <!-- Anno di uscita -->
             </div>
             
-            <h5 class="card-title fw-bold">{{ u.titolo }}</h5>
-            <p class="card-text small text-light mb-1"><strong>Regia:</strong> {{ u.regista }}</p>
-            <p class="card-text small text-light mb-1"><strong>Genere:</strong> {{ u.genere }}</p>
-            <p class="card-text mb-0 mt-3">
-              <span class="badge border border-light text-light">{{ u.classificazione }}</span>
-              <span class="ms-2 small text-info">{{ u.durata }}</span>
+            <h5 class="card-title fw-bold">{{ u.titolo }}</h5> <!-- Titolo -->
+            <p class="card-text small text-light mb-1"><strong>Regia:</strong> {{ u.regista }}</p> <!-- Regista -->
+            <p class="card-text small text-light mb-1"><strong>Genere:</strong> {{ u.genere }}</p> <!-- Genere -->
+            <p class="card-text mb-0 mt-3"> <!-- Sezione finale info -->
+              <span class="badge border border-light text-light">{{ u.classificazione }}</span> <!-- Classificazione -->
+              <span class="ms-2 small text-info">{{ u.durata }}</span> <!-- Durata -->
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div *ngIf="unita.length === 0" class="text-center text-white py-5">
-      <div class="spinner-border text-info" role="status"></div>
-      <p class="mt-2">Caricamento dati dal database...</p>
+    <div *ngIf="unita.length === 0" class="text-center text-white py-5"> <!-- Mostrato se non ci sono dati -->
+      <div class="spinner-border text-info" role="status"></div> <!-- Spinner di caricamento -->
+      <p class="mt-2">Caricamento dati dal database...</p> <!-- Messaggio di caricamento -->
     </div>
 
   </div>
-</div>
+</div> <!-- Fine contenitore principale -->

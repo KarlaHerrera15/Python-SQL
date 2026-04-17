@@ -59,5 +59,5 @@ for index, row in df.iterrows():
 db.commit()
 # Stampa un messaggio di conferma nel terminale
 print(f"✅ Successo! Caricati {len(df)} titoli Disney+.")
-# Chiude la connessione al database per liberare risorse
+# Chiude la connessione al database 
 db.close()
